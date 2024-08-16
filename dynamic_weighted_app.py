@@ -170,10 +170,12 @@ data = pd.DataFrame(columns=columns)
 
 # Streamlit app title
 st.title("Employee Score Input Simulation")
+st.subheader(f"How many employees do you want to compare?")
+num_emp = st.number_input(f"Number of employee", min_value=0, max_value=100, value = 3)
 
 # Input form for 5 individuals
 st.header(f"Step1: Input Example employees")
-for i in range(3):
+for i in range(num_emp):
     st.subheader(f"Employee {i+1}")
     
     person_id = st.text_input(f"Person ID {i+1}", f"ID{i+1}")
